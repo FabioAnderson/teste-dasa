@@ -1,0 +1,7 @@
+#geral
+titulo: h1[id='title']
+botao_limpar: button[id='clear-input']
+campo_tarefa: input[id='add-task-input']
+botao_adicionar: button[id='add-task-button']
+botao_tela_done: a[id='done-button']
+campo_buscar: input[id='search-task']
