@@ -78,7 +78,7 @@ cucumber -t @geral chrome=true
   ![ExcelReport](./images/excel.jpeg)
 
 
-# Bugs encontrados.
+# Bugs encontrados:
 
 Durante as validações foram encontrados alguns bugs, os quais separei por categoria:
 
