@@ -44,11 +44,15 @@ class PaginaHelper
       while coluna <= maxcol
         begin
           worksheet.change_column_width(coluna, 13)
+        rescue
+          p "não foi possivel redimensionar coluna"
         end
         coluna += 1
       end
       begin
         worksheet.change_row_height(linha, 15)
+      rescue
+        p "não foi possivel redimensionar coluna"
       end
       linha += 1
     end
@@ -71,6 +75,8 @@ class PaginaHelper
     worksheet.sheet_data[1][0].change_font_size(8)
     begin
       worksheet.change_column_width(0, 4)
+    rescue
+      p "não foi possivel redimensionar coluna"
     end
 
     worksheet.add_cell(1, 1, "CENÁRIO")
@@ -80,6 +86,8 @@ class PaginaHelper
     worksheet.sheet_data[1][1].change_horizontal_alignment("center")
     begin
       worksheet.change_column_width(1, 32)
+    rescue
+      p "não foi possivel redimensionar coluna"
     end
     #worksheet.change_column_width(2, 9)
 
@@ -90,6 +98,8 @@ class PaginaHelper
     worksheet.sheet_data[1][2].change_horizontal_alignment("center")
     begin
       worksheet.change_column_width(2, 8)
+    rescue
+      p "não foi possivel redimensionar coluna"
     end
 
     worksheet.add_cell(1, 3, "OBSERVAÇÕES")
@@ -99,6 +109,8 @@ class PaginaHelper
     worksheet.sheet_data[1][3].change_font_size(8)
     begin
       worksheet.change_column_width(3, 50)
+    rescue
+      p "não foi possivel redimensionar coluna"
     end
     ################################################################
     ################# -- CONTEÚDO DINÂMICO -- ######################
