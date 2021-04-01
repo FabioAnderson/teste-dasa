@@ -42,10 +42,18 @@ class PaginaHelper
 
     while linha < 3
       while coluna <= maxcol
-        worksheet.change_column_width(coluna, 13)
+        begin
+          worksheet.change_column_width(coluna, 13)
+        rescue
+          p "não foi possivel redimensionar coluna"
+        end
         coluna += 1
       end
-      worksheet.change_row_height(linha, 15)
+      begin
+        worksheet.change_row_height(linha, 15)
+      rescue
+        p "não foi possivel redimensionar coluna"
+      end
       linha += 1
     end
 
@@ -65,14 +73,22 @@ class PaginaHelper
     worksheet.sheet_data[1][0].change_fill("8db4e2")
     worksheet.sheet_data[1][0].change_horizontal_alignment("center")
     worksheet.sheet_data[1][0].change_font_size(8)
-    worksheet.change_column_width(0, 4)
+    begin
+      worksheet.change_column_width(0, 4)
+    rescue
+      p "não foi possivel redimensionar coluna"
+    end
 
     worksheet.add_cell(1, 1, "CENÁRIO")
     worksheet.sheet_data[1][1].change_font_bold(true)
     worksheet.sheet_data[1][1].change_fill("8db4e2")
     worksheet.sheet_data[1][1].change_font_size(8)
     worksheet.sheet_data[1][1].change_horizontal_alignment("center")
-    worksheet.change_column_width(1, 32)
+    begin
+      worksheet.change_column_width(1, 32)
+    rescue
+      p "não foi possivel redimensionar coluna"
+    end
     #worksheet.change_column_width(2, 9)
 
     worksheet.add_cell(1, 2, "STATUS")
@@ -80,15 +96,22 @@ class PaginaHelper
     worksheet.sheet_data[1][2].change_fill("8db4e2")
     worksheet.sheet_data[1][2].change_font_size(8)
     worksheet.sheet_data[1][2].change_horizontal_alignment("center")
-    worksheet.change_column_width(2, 8)
+    begin
+      worksheet.change_column_width(2, 8)
+    rescue
+      p "não foi possivel redimensionar coluna"
+    end
 
     worksheet.add_cell(1, 3, "OBSERVAÇÕES")
     worksheet.sheet_data[1][3].change_font_bold(true)
     worksheet.sheet_data[1][3].change_fill("8db3e2")
     worksheet.sheet_data[1][3].change_horizontal_alignment("center")
     worksheet.sheet_data[1][3].change_font_size(8)
-    worksheet.change_column_width(3, 50)
-
+    begin
+      worksheet.change_column_width(3, 50)
+    rescue
+      p "não foi possivel redimensionar coluna"
+    end
     ################################################################
     ################# -- CONTEÚDO DINÂMICO -- ######################
     linha = 0
