@@ -72,10 +72,10 @@ cucumber -t @geral chrome=true
 > Realtórios
 - Ao final do teste serão gerados dois relatórios
   - Cucumber report: disponibilizado através de um link no final da execução
-  ![CucumberReport](./images/cucumberreport.png)
+  ![CucumberReport](./images/cucumberreport.PNG)
 
   - Relatório em Excel: disponibilizado no final da execução na pasta Data
-  ![ExcelReport](./images/excel.jpg)
+  ![ExcelReport](./images/excel.jpeg)
 
 
 # Bugs encontrados.
