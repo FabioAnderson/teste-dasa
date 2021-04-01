@@ -1,0 +1,1 @@
+default: --no-source --color --format pretty --publish --out=data/report.json

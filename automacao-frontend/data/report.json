@@ -1,0 +1,82 @@
+Using the default profile...
+[90m#language: pt[0m
+Funcionalidade: Validar quadro de tarefas concluidas
+
+  [90m# Adicionando um contexto comum para todos os cenários[0m
+  Contexto: Acessar tela de tarefas concluidas
+    [32mDado que estou na pagina done com uma tarefa concluida[0m
+
+  [90m# Validação da pesquisa de tarefas em tarefas concluidas[0m
+  [36m@geral[0m [36m@done[0m [36m@pesquisar_tarefa_concluida[0m
+  Cenario: Validar pesquisa de tarefas concluidas
+    [32mQuando pesquiso por uma tarefa[0m
+    [32mEntão valido o retorno da pesquisa[0m
+
+  [90m# Validação a exclusao de dados do quadro de tarefas concluidas[0m
+  [36m@geral[0m [36m@done[0m [36m@excluir_tarefa_concluida[0m
+  Cenario: Validar exclusão de tarefas concluidas
+    [32mQuando excluo uma tarefa concluida[0m
+    [31mEntão valido se a tarefa foi removida com sucesso[0m
+[31m      Atividade não foi excluida (RuntimeError)[0m
+[31m      ./features/support/pages/PaginaDone.rb:58:in `rescue in validar_exclusao'[0m
+[31m      ./features/support/pages/PaginaDone.rb:53:in `validar_exclusao'[0m
+[31m      ./features/step_definitions/done.rb:22:in `"valido se a tarefa foi removida com sucesso"'[0m
+[31m      features/spec/done.feature:20:in `valido se a tarefa foi removida com sucesso'[0m
+
+[90m#language: pt[0m
+Funcionalidade: Validar tela de tarefas a fazer
+
+  Contexto: Acessar tela de tarefas a fazer
+    [32mDado que estou acessando a tela de tarefas a fazer[0m
+
+  [36m@geral[0m [36m@to_do[0m [36m@limpar_caixa_texto[0m
+  Cenario: Validar a limpeza da caixa de texto
+    [32mQuando preencho a caixa de texto e clico na opção limpar[0m
+    [32mEntão valido se a caixa de texto foi limpa[0m
+
+  [36m@geral[0m [36m@to_do[0m [36m@adicionar_tarefa[0m
+  Cenario: Validar a inclusao de uma tarefa
+    [32mQuando adiciono uma tarefa a lista de tarefas[0m
+    [32mEntão valido se a tarefa foi salva com sucesso[0m
+
+  [90m# Validação da adição de duas tarefas à lista de tarefas[0m
+  [36m@geral[0m [36m@to_do[0m [36m@adicionar_duas_tarefas[0m
+  Cenario: Validar a inclusao de duas tarefas simultaneamente
+    [32mQuando adiciono duas tarefas a lista de tarefas[0m
+    [32mEntão valido se as duas tarefas foram salvas com sucesso[0m
+
+  [90m# Validação da exclusão de tarefas na tela de tarefas a fazer[0m
+  [36m@geral[0m [36m@to_do[0m [36m@excluir_tarefa_a_fazer[0m
+  Cenario: Validar a exclusao de tarefas
+    [32mQuando adiciono uma tarefa a lista de tarefas[0m
+    [32mE excluo uma tarefa cadastrada[0m
+    [32mEntão valido se a tarefa foi excluida com sucesso[0m
+
+  [90m# Validação da conclusão de tarefas[0m
+  [36m@geral[0m [36m@to_do[0m [36m@concluir_tarefa[0m
+  Cenario: Validar se a tarefa foi concluida
+    [32mQuando adiciono uma tarefa a lista de tarefas[0m
+    [32mE marco uma tarefa como concluida[0m
+    [32mE a tarefa sai da lista de tarefas a fazer[0m
+    [32mEntão verifico se a tarefa está na lista de tarefas concluidas[0m
+
+  [90m# Validação da adição de tarefas, de nomes longos, na lista de tarefas a fazer[0m
+  [36m@geral[0m [36m@to_do[0m [36m@adicionar_tarefa_longa[0m
+  Cenario: Validar a inclusao de uma tarefa de nome extenso
+    [32mQuando adiciono uma tarefa de nome extenso a lista de tarefas[0m
+    [31mE marco uma tarefa como concluida[0m
+[31m      Não foi possivel clicar em finalizar tarefa (RuntimeError)[0m
+[31m      ./features/support/pages/PaginaToDo.rb:114:in `rescue in concluir_tarefa'[0m
+[31m      ./features/support/pages/PaginaToDo.rb:108:in `concluir_tarefa'[0m
+[31m      ./features/step_definitions/to_do.rb:41:in `"marco uma tarefa como concluida"'[0m
+[31m      features/spec/to_do.feature:47:in `marco uma tarefa como concluida'[0m
+    [36mE a tarefa sai da lista de tarefas a fazer[0m
+    [36mEntão verifico se a tarefa está na lista de tarefas concluidas[0m
+
+[31mFailing Scenarios:[0m
+[31mcucumber features/spec/done.feature:18[0m
+[31mcucumber features/spec/to_do.feature:45[0m
+
+8 scenarios ([31m2 failed[0m, [32m6 passed[0m)
+29 steps ([31m2 failed[0m, [36m2 skipped[0m, [32m25 passed[0m)
+0m29.480s
